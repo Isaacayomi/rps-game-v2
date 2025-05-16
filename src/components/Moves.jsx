@@ -4,7 +4,7 @@
 import scissorsIcon from "../assets/icon-scissors.svg";
 import paperIcon from "../assets/icon-paper.svg";
 import rockIcon from "../assets/icon-rock.svg";
-import Button from "../Button";
+import Button from "./Button";
 import RulesButton from "./RulesButton";
 
 function Moves({ dispatch }) {
