@@ -16,7 +16,7 @@ function StartScreen({
   const [showResult, setShowResult] = useState(false);
 
   return (
-    <div className=" pt-2 transition  duration-300 ease-in-out">
+    <div className="bg-home-bg min-h-screen pt-2 pb-3 transition  duration-300 ease-in-out">
       <Header playerScore={playerScore} />
       {playerMove && !showResult ? (
         <ResultScreen

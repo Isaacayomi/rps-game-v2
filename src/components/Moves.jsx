@@ -7,38 +7,32 @@ function Moves({ dispatch, onSetShowResult }) {
   return (
     <div className=" flex flex-col items-center h-full bg-triangle-gradient bg-no-repeat bg-center bg-[length:14rem_10rem] mt-[-2rem] ">
       <div className="flex gap-[3.23rem] mt-[6.56rem]">
-        <Button>
-          <img
-            src={paperIcon}
-            alt="Paper move"
-            onClick={() => {
-              dispatch({ type: "paperMove", payload: "paper" });
-              onSetShowResult((showResult) => !showResult);
-            }}
-          />
+        <Button
+          onClick={() => {
+            dispatch({ type: "paperMove", payload: "paper" });
+            onSetShowResult((showResult) => !showResult);
+          }}
+        >
+          <img src={paperIcon} alt="Paper move" />
         </Button>
 
-        <Button>
-          <img
-            src={scissorsIcon}
-            alt="Scissors move"
-            onClick={() => {
-              dispatch({ type: "scissorsMove", payload: "scissors" });
-              onSetShowResult((showResult) => !showResult);
-            }}
-          />
+        <Button
+          onClick={() => {
+            dispatch({ type: "scissorsMove", payload: "scissors" });
+            onSetShowResult((showResult) => !showResult);
+          }}
+        >
+          <img src={scissorsIcon} alt="Scissors move" />
         </Button>
       </div>
 
-      <Button>
-        <img
-          src={rockIcon}
-          alt="Rock move"
-          onClick={() => {
-            dispatch({ type: "rockMove", payload: "rock" });
-            onSetShowResult((showResult) => !showResult);
-          }}
-        />
+      <Button
+        onClick={() => {
+          dispatch({ type: "rockMove", payload: "rock" });
+          onSetShowResult((showResult) => !showResult);
+        }}
+      >
+        <img src={rockIcon} alt="Rock move" />
       </Button>
     </div>
   );
