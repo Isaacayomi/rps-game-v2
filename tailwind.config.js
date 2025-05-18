@@ -26,6 +26,11 @@ export default {
 
       boxShadow: {
         customShadow: "0px 3px 3px 0px rgba(0, 0, 0, 0.20)",
+        glowRadial: `
+          0 0 5px 40px rgba(255, 255, 255, 0.07),
+          0 0 5px 75px rgba(255, 255, 255, 0.05),
+          0 0 5px 105px rgba(255, 255, 255, 0.03)
+        `,
       },
       fontFamily: {
         barlow: ["Barlow Semi Condensed", "sans-serif"],

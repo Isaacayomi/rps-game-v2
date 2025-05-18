@@ -7,7 +7,7 @@ const initialState = {
   playerMove: null,
   computerMove: null,
   showRules: false,
-  score: 0,
+  playerScore: 0,
 };
 
 function generateComputerMove() {
@@ -53,7 +53,7 @@ function reducer(state, action) {
         ...state,
         playerMove: null,
         computerMove: null,
-        score: state.score || action.payload,
+        playerScore: action.payload ? state.playerScore + 1 : state.playerScore,
       };
 
     default:
@@ -64,15 +64,13 @@ function reducer(state, action) {
 function App() {
   const [result, setResult] = useState("");
 
-  const [{ showRules, score, playerMove, computerMove }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ showRules, playerScore, playerMove, computerMove }, dispatch] =
+    useReducer(reducer, initialState);
   return (
     <div>
       {!showRules && (
         <StartScreen
-          score={score}
+          playerScore={playerScore}
           dispatch={dispatch}
           playerMove={playerMove}
           computerMove={computerMove}

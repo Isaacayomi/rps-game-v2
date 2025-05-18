@@ -21,19 +21,19 @@ function ResultScreen({
   function resultLogic() {
     if (playerMove === "rock") {
       if (computerMove === "rock") {
-        onSetResult("YOU DRAW");
+        onSetResult("ITS A TIE");
       } else if (computerMove === "paper") {
         onSetResult("YOU LOSE");
       } else {
-        onSetResult("ITS A TIE");
+        onSetResult("YOU WIN");
       }
     } else if (playerMove === "paper") {
       if (computerMove === "rock") {
-        onSetResult("YOU LOSE");
+        onSetResult("YOU WIN");
       } else if (computerMove === "paper") {
         onSetResult("ITS A TIE");
       } else {
-        onSetResult("YOU WIN");
+        onSetResult("YOU LOSE");
       }
     } else if (playerMove === "scissors") {
       if (computerMove === "rock") {
@@ -41,7 +41,7 @@ function ResultScreen({
       } else if (computerMove === "paper") {
         onSetResult("YOU WIN");
       } else {
-        onSetResult("YOU LOSE");
+        onSetResult("ITS A TIE");
       }
     }
   }
@@ -59,17 +59,17 @@ function ResultScreen({
   return (
     <>
       <div className="flex justify-center items-start mt-[6.19rem] gap-[3.12rem]">
-        <div className=" flex flex-col">
+        <div className=" flex  flex-col-reverse">
           <p className="text-white font-barlow text-[0.9375rem] font-bold tracking-[0.1875rem] text-center">
             YOU PICKED
           </p>
           <img
             src={icons[playerMove]}
-            className="w-[8.08538rem] h-[7.92356rem] mx-auto"
+            className="w-[8.08538rem] h-[7.92356rem] mx-auto  rounded-full shadow-glowRadial"
             alt="player move"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col-reverse">
           <p className="text-white font-barlow text-[0.9375rem] font-bold tracking-[0.1875rem] text-center">
             THE HOUSE PICKED
           </p>
@@ -87,8 +87,9 @@ function ResultScreen({
         </p>
         <button
           onClick={() => {
-            onSetShowResult(false);
-            dispatch({ type: "reset", payload: result === "YOU WIN" && +1 });
+            onSetShowResult((result) => !result);
+            onSetResult("");
+            dispatch({ type: "reset", payload: result === "YOU WIN" });
           }}
           className="font-barlow bg-white text-darkText block mx-auto rounded-lg font-semibold text-base py-[0.94rem] px-[3.75rem] leading-[0.15625rem] "
         >

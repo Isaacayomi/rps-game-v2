@@ -7,18 +7,18 @@ import RulesButton from "./RulesButton";
 
 function StartScreen({
   dispatch,
-  score,
+  playerScore,
   playerMove,
   computerMove,
   result,
   onSetResult,
 }) {
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
 
   return (
-    <div className="bg-home-bg pt-2 transition  duration-300 ease-in-out">
-      <Header score={score} />
-      {playerMove && showResult ? (
+    <div className=" pt-2 transition  duration-300 ease-in-out">
+      <Header playerScore={playerScore} />
+      {playerMove && !showResult ? (
         <ResultScreen
           playerMove={playerMove}
           computerMove={computerMove}
@@ -29,7 +29,7 @@ function StartScreen({
           onSetResult={onSetResult}
         />
       ) : (
-        <Moves dispatch={dispatch} />
+        <Moves dispatch={dispatch} onSetShowResult={setShowResult} />
       )}
       <RulesButton dispatch={dispatch} />
     </div>
