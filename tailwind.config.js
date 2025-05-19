@@ -17,6 +17,7 @@ export default {
         "spock-gradient":
           "radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%))",
         "triangle-gradient": ' url("../src/assets/bg-triangle.svg")',
+        "pentagon-gradient": 'url("../src/assets/bg-pentagon.svg")',
       },
       colors: {
         darkText: "hsl(229, 25%, 31%)",

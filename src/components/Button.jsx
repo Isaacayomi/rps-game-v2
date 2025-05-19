@@ -1,8 +1,8 @@
-function Button({ children, onClick }) {
+function Button({ children }) {
   return (
-    <button onClick={onClick} className="outline-slate-200 rounded-full">
+    <div className="block mx-auto font-barlow border border-white text-white rounded-md px-[2.31rem] py-[0.69rem] mt-[3rem] cursor-pointer mr-5">
       {children}
-    </button>
+    </div>
   );
 }
 

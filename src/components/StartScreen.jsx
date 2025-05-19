@@ -4,6 +4,7 @@ import Header from "./Header";
 import Moves from "./Moves";
 import ResultScreen from "./ResultScreen";
 import RulesButton from "./RulesButton";
+import AdvancedGame from "./AdvancedGame";
 
 function StartScreen({
   dispatch,
@@ -12,6 +13,8 @@ function StartScreen({
   computerMove,
   result,
   onSetResult,
+  toggleMode,
+  onSetMode,
 }) {
   const [showResult, setShowResult] = useState(false);
 
@@ -27,11 +30,25 @@ function StartScreen({
           dispatch={dispatch}
           result={result}
           onSetResult={onSetResult}
+          toggleMode={toggleMode}
+          onSetMode={onSetMode}
         />
       ) : (
-        <Moves dispatch={dispatch} onSetShowResult={setShowResult} />
+        <Moves
+          dispatch={dispatch}
+          onSetShowResult={setShowResult}
+          toggleMode={toggleMode}
+        />
       )}
-      <RulesButton dispatch={dispatch} />
+      <div className="flex justify-evenly items-center gap-4 mt-4 lg:mt-10">
+        <AdvancedGame
+          dispatch={dispatch}
+          playerScore={playerScore}
+          toggleMode={toggleMode}
+          onSetMode={onSetMode}
+        />
+        <RulesButton dispatch={dispatch} />
+      </div>
     </div>
   );
 }

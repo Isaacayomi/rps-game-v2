@@ -3,11 +3,15 @@ import { useEffect } from "react";
 import icon_scissors from "../assets/icon-scissors.svg";
 import icon_rock from "../assets/icon-rock.svg";
 import icon_paper from "../assets/icon-paper.svg";
+import icon_lizard from "../assets/icon-lizard.svg";
+import icon_spock from "../assets/icon-spock.svg";
 
 const icons = {
   rock: icon_rock,
   paper: icon_paper,
   scissors: icon_scissors,
+  lizard: icon_lizard,
+  spock: icon_spock,
 };
 
 function ResultScreen({
@@ -17,31 +21,76 @@ function ResultScreen({
   onSetResult,
   result,
   dispatch,
+  toggleMode,
 }) {
   function resultLogic() {
-    if (playerMove === "rock") {
-      if (computerMove === "rock") {
-        onSetResult("ITS A TIE");
-      } else if (computerMove === "paper") {
-        onSetResult("YOU LOSE");
-      } else {
-        onSetResult("YOU WIN");
+    if (toggleMode === "ADVANCED") {
+      if (playerMove === "rock") {
+        if (computerMove === "rock") {
+          onSetResult("ITS A TIE");
+        } else if (computerMove === "paper") {
+          onSetResult("YOU LOSE");
+        } else {
+          onSetResult("YOU WIN");
+        }
+      } else if (playerMove === "paper") {
+        if (computerMove === "rock") {
+          onSetResult("YOU WIN");
+        } else if (computerMove === "paper") {
+          onSetResult("ITS A TIE");
+        } else {
+          onSetResult("YOU LOSE");
+        }
+      } else if (playerMove === "scissors") {
+        if (computerMove === "rock") {
+          onSetResult("YOU LOSE");
+        } else if (computerMove === "paper") {
+          onSetResult("YOU WIN");
+        } else {
+          onSetResult("ITS A TIE");
+        }
       }
-    } else if (playerMove === "paper") {
-      if (computerMove === "rock") {
-        onSetResult("YOU WIN");
-      } else if (computerMove === "paper") {
-        onSetResult("ITS A TIE");
-      } else {
-        onSetResult("YOU LOSE");
-      }
-    } else if (playerMove === "scissors") {
-      if (computerMove === "rock") {
-        onSetResult("YOU LOSE");
-      } else if (computerMove === "paper") {
-        onSetResult("YOU WIN");
-      } else {
-        onSetResult("ITS A TIE");
+    } else if (toggleMode === "CLASSIC") {
+      if (playerMove === "rock") {
+        if (computerMove === "scissors" || computerMove === "lizard") {
+          onSetResult("YOU WIN");
+        } else if (computerMove === "rock") {
+          onSetResult("ITS A TIE");
+        } else {
+          onSetResult("YOU LOSE");
+        }
+      } else if (playerMove === "paper") {
+        if (computerMove === "rock" || computerMove === "spock") {
+          onSetResult("YOU WIN");
+        } else if (computerMove === "paper") {
+          onSetResult("ITS A TIE");
+        } else {
+          onSetResult("YOU LOSE");
+        }
+      } else if (playerMove === "scissors") {
+        if (computerMove === "paper" || computerMove === "lizard") {
+          onSetResult("YOU WIN");
+        } else if (computerMove === "scissors") {
+          onSetResult("ITS A TIE");
+        } else {
+          onSetResult("YOU LOSE");
+        }
+      } else if (playerMove === "lizard") {
+        if (computerMove === "spock" || computerMove === "paper") {
+          onSetResult("YOU WIN");
+        } else if (computerMove === "lizard") {
+          onSetResult("ITS A TIE");
+        } else {
+          onSetResult("YOU LOSE");
+        }
+      } else if (playerMove === "spock") {
+        if (computerMove === "scissors" || computerMove === "rock") {
+          onSetResult("YOU WIN");
+        } else if (computerMove === "spock") {
+          onSetResult("ITS A TIE");
+        } else {
+          onSetResult("YOU LOSE");
+        }
       }
     }
   }
@@ -69,7 +118,7 @@ function ResultScreen({
           />
         </div>
 
-        <div className="hidden lg:flex flex-col items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center ml-[3rem]">
+        <div className="hidden lg:flex flex-col items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center ml-[1.5rem]">
           <p className="font-barlow text-white text-[3.5rem] font-bold">
             {result}
           </p>
