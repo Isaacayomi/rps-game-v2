@@ -17,6 +17,7 @@ function AdvancedMove({ dispatch, onSetShowResult, toggleMode }) {
               mode: toggleMode,
             });
             onSetShowResult((showResult) => !showResult);
+            console.log("mode", toggleMode);
           }}
         >
           <img
@@ -34,6 +35,7 @@ function AdvancedMove({ dispatch, onSetShowResult, toggleMode }) {
                 mode: toggleMode,
               });
               onSetShowResult((showResult) => !showResult);
+              console.log("mode", toggleMode);
             }}
           >
             <img
@@ -51,6 +53,7 @@ function AdvancedMove({ dispatch, onSetShowResult, toggleMode }) {
                 mode: toggleMode,
               });
               onSetShowResult((showResult) => !showResult);
+              console.log("mode", toggleMode);
             }}
           >
             <img
@@ -70,6 +73,7 @@ function AdvancedMove({ dispatch, onSetShowResult, toggleMode }) {
                 mode: toggleMode,
               });
               onSetShowResult((showResult) => !showResult);
+              console.log("mode", toggleMode);
             }}
           >
             <img
@@ -83,6 +87,7 @@ function AdvancedMove({ dispatch, onSetShowResult, toggleMode }) {
             onClick={() => {
               dispatch({ type: "rockMove", payload: "rock", mode: toggleMode });
               onSetShowResult((showResult) => !showResult);
+              console.log("mode", toggleMode);
             }}
           >
             <img

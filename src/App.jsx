@@ -14,7 +14,7 @@ const initialState = {
 function generateComputerMove(mode) {
   const randomMove = Math.random();
 
-  if (mode === "ADVANCED") {
+  if (mode === "CLASSIC") {
     if (randomMove < 1 / 3) {
       return "rock";
     } else if (randomMove < 2 / 3) {
@@ -121,7 +121,7 @@ function App() {
         onSetMode={setToggleMode}
       />
 
-      {showRules && <RulesModal dispatch={dispatch} />}
+      {showRules && <RulesModal dispatch={dispatch} toggleMode={toggleMode} />}
     </div>
   );
 }

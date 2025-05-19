@@ -24,9 +24,9 @@ function ResultScreen({
   toggleMode,
 }) {
   function resultLogic() {
-    if (toggleMode === "ADVANCED") {
+    if (toggleMode === "CLASSIC") {
       if (playerMove === "rock") {
-        if (computerMove === "rock") {
+        if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else if (computerMove === "paper") {
           onSetResult("YOU LOSE");
@@ -36,7 +36,7 @@ function ResultScreen({
       } else if (playerMove === "paper") {
         if (computerMove === "rock") {
           onSetResult("YOU WIN");
-        } else if (computerMove === "paper") {
+        } else if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else {
           onSetResult("YOU LOSE");
@@ -50,11 +50,11 @@ function ResultScreen({
           onSetResult("ITS A TIE");
         }
       }
-    } else if (toggleMode === "CLASSIC") {
+    } else if (toggleMode === "ADVANCED") {
       if (playerMove === "rock") {
         if (computerMove === "scissors" || computerMove === "lizard") {
           onSetResult("YOU WIN");
-        } else if (computerMove === "rock") {
+        } else if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else {
           onSetResult("YOU LOSE");
@@ -62,7 +62,7 @@ function ResultScreen({
       } else if (playerMove === "paper") {
         if (computerMove === "rock" || computerMove === "spock") {
           onSetResult("YOU WIN");
-        } else if (computerMove === "paper") {
+        } else if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else {
           onSetResult("YOU LOSE");
@@ -70,7 +70,7 @@ function ResultScreen({
       } else if (playerMove === "scissors") {
         if (computerMove === "paper" || computerMove === "lizard") {
           onSetResult("YOU WIN");
-        } else if (computerMove === "scissors") {
+        } else if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else {
           onSetResult("YOU LOSE");
@@ -78,7 +78,7 @@ function ResultScreen({
       } else if (playerMove === "lizard") {
         if (computerMove === "spock" || computerMove === "paper") {
           onSetResult("YOU WIN");
-        } else if (computerMove === "lizard") {
+        } else if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else {
           onSetResult("YOU LOSE");
@@ -86,7 +86,7 @@ function ResultScreen({
       } else if (playerMove === "spock") {
         if (computerMove === "scissors" || computerMove === "rock") {
           onSetResult("YOU WIN");
-        } else if (computerMove === "spock") {
+        } else if (computerMove === playerMove) {
           onSetResult("ITS A TIE");
         } else {
           onSetResult("YOU LOSE");

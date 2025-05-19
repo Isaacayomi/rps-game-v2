@@ -9,7 +9,7 @@ function AdvancedGame({ dispatch, toggleMode, onSetMode }) {
           : onSetMode("ADVANCED");
       }}
     >
-      <Button>{toggleMode}</Button>
+      <Button>{toggleMode === "ADVANCED" ? "CLASSIC" : "ADVANCED"}</Button>
     </button>
   );
 }
