@@ -31,6 +31,7 @@ export default {
           0 0 5px 75px rgba(255, 255, 255, 0.05),
           0 0 5px 105px rgba(255, 255, 255, 0.03)
         `,
+        hoverGlow: " 0 0 5px 40px rgba(255, 255, 255, 0.07)",
       },
       fontFamily: {
         barlow: ["Barlow Semi Condensed", "sans-serif"],

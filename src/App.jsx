@@ -30,6 +30,7 @@ function reducer(state, action) {
     case "rockMove":
       return {
         ...state,
+        showRules: false,
         playerMove: action.payload,
         computerMove: generateComputerMove(),
       };
@@ -37,6 +38,7 @@ function reducer(state, action) {
     case "paperMove":
       return {
         ...state,
+        showRules: false,
         playerMove: action.payload,
         computerMove: generateComputerMove(),
       };
@@ -44,6 +46,7 @@ function reducer(state, action) {
     case "scissorsMove":
       return {
         ...state,
+        showRules: false,
         playerMove: action.payload,
         computerMove: generateComputerMove(),
       };
@@ -68,16 +71,15 @@ function App() {
     useReducer(reducer, initialState);
   return (
     <div>
-      {!showRules && (
-        <StartScreen
-          playerScore={playerScore}
-          dispatch={dispatch}
-          playerMove={playerMove}
-          computerMove={computerMove}
-          result={result}
-          onSetResult={setResult}
-        />
-      )}
+      <StartScreen
+        playerScore={playerScore}
+        dispatch={dispatch}
+        playerMove={playerMove}
+        computerMove={computerMove}
+        result={result}
+        onSetResult={setResult}
+      />
+
       {showRules && <RulesModal dispatch={dispatch} />}
     </div>
   );

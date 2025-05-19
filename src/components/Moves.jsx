@@ -5,7 +5,7 @@ import Button from "./Button";
 
 function Moves({ dispatch, onSetShowResult }) {
   return (
-    <div className=" flex flex-col items-center h-full bg-triangle-gradient bg-no-repeat bg-center bg-[length:14rem_10rem] mt-[-2rem] ">
+    <div className=" flex flex-col items-center h-full bg-triangle-gradient bg-no-repeat bg-center bg-[length:14rem_10rem] mt-[-2rem] lg:bg-[length:16rem_13rem] ">
       <div className="flex gap-[3.23rem] mt-[6.56rem]">
         <Button
           onClick={() => {
@@ -13,7 +13,11 @@ function Moves({ dispatch, onSetShowResult }) {
             onSetShowResult((showResult) => !showResult);
           }}
         >
-          <img src={paperIcon} alt="Paper move" />
+          <img
+            src={paperIcon}
+            alt="Paper move"
+            className=" lg:w-[15.75rem] lg:max-w-full lg:hover:shadow-hoverGlow lg:rounded-full"
+          />
         </Button>
 
         <Button
@@ -22,7 +26,11 @@ function Moves({ dispatch, onSetShowResult }) {
             onSetShowResult((showResult) => !showResult);
           }}
         >
-          <img src={scissorsIcon} alt="Scissors move" />
+          <img
+            src={scissorsIcon}
+            alt="Scissors move"
+            className=" lg:w-[15.75rem] lg:max-w-full  lg:hover:shadow-hoverGlow lg:rounded-full"
+          />
         </Button>
       </div>
 
@@ -32,7 +40,11 @@ function Moves({ dispatch, onSetShowResult }) {
           onSetShowResult((showResult) => !showResult);
         }}
       >
-        <img src={rockIcon} alt="Rock move" />
+        <img
+          src={rockIcon}
+          alt="Rock move"
+          className=" lg:w-[15.75rem] lg:max-w-full lg:hover:shadow-hoverGlow lg:rounded-full"
+        />
       </Button>
     </div>
   );
