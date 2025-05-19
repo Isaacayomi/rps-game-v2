@@ -113,7 +113,9 @@ function ResultScreen({
           </p>
           <img
             src={icons[playerMove]}
-            className="w-[8.08538rem] h-[7.92356rem] mx-auto rounded-full shadow-glowRadial lg:w-[18.28819rem] lg:h-[17.91869rem]"
+            className={`w-[8.08538rem] h-[7.92356rem] mx-auto rounded-full  lg:w-[18.28819rem] lg:h-[17.91869rem] ${
+              result === "YOU WIN" && "shadow-glowRadial"
+            }`}
             alt="player move"
           />
         </div>
@@ -142,7 +144,9 @@ function ResultScreen({
           </p>
           <img
             src={icons[computerMove]}
-            className="w-[8.08538rem] h-[7.92356rem] mx-auto lg:w-[18.28819rem] lg:h-[17.91869rem]"
+            className={`w-[8.08538rem] h-[7.92356rem] mx-auto rounded-full lg:w-[18.28819rem] lg:h-[17.91869rem] ${
+              result === "YOU LOSE" && "shadow-glowRadial"
+            }`}
             alt="computer move"
           />
         </div>
