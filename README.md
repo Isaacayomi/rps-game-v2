@@ -46,8 +46,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🧑‍💻 Author Info
 
-- GitHub - [Your GitHub](https://github.com/Isaacayomi)
-- Twitter - [Your Twitter](https://twitter.com/_devPRIME)
+- GitHub - [Isaac Ayomide](https://github.com/Isaacayomi)
+- Twitter - [\_devPRIME](https://twitter.com/_devPRIME)
 
 ## 💪 Show your support
 
