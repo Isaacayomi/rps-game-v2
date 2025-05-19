@@ -18,7 +18,7 @@ Dive into the classic game of Rock, Paper, Scissors with a modern twist! This Re
 
 In Classic Mode, you can pick between rock, paper or scissors.
 
-![Classic Mode Screenshot](https://via.placeholder.com/600x400)
+![Classic Mode Screenshot]('./images/rps-classic.png')
 
 </details>
 
@@ -27,7 +27,7 @@ In Classic Mode, you can pick between rock, paper or scissors.
 
 In Advanced Mode, you can pick between rock, paper, scissors, lizard or spock.
 
-![Advanced Mode Screenshot](https://via.placeholder.com/600x400)
+![Advanced Mode Screenshot]('./images/rps-advanced.png')
 
 </details>
 
@@ -46,9 +46,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🧑‍💻 Author Info
 
-- GitHub - [Your GitHub](https://github.com/your-github)
-- Twitter - [Your Twitter](https://twitter.com/your-twitter)
-- LinkedIn - [Your LinkedIn](https://www.linkedin.com/in/your-linkedin)
+- GitHub - [Your GitHub](https://github.com/Isaacayomi)
+- Twitter - [Your Twitter](https://twitter.com/_devPRIME)
 
 ## 💪 Show your support
 
