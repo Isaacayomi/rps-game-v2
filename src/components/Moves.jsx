@@ -5,7 +5,11 @@ function Moves({ dispatch, onSetShowResult, toggleMode }) {
   return (
     <>
       {toggleMode === "CLASSIC" ? (
-        <AdvancedMove dispatch={dispatch} onSetShowResult={onSetShowResult} />
+        <AdvancedMove
+          dispatch={dispatch}
+          onSetShowResult={onSetShowResult}
+          toggleMode={toggleMode}
+        />
       ) : (
         <ClassicMove dispatch={dispatch} onSetShowResult={onSetShowResult} />
       )}

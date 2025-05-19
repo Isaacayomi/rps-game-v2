@@ -14,7 +14,7 @@ const initialState = {
 function generateComputerMove(mode) {
   const randomMove = Math.random();
 
-  if (mode === "CLASSIC") {
+  if (mode === "ADVANCED") {
     if (randomMove < 1 / 3) {
       return "rock";
     } else if (randomMove < 2 / 3) {

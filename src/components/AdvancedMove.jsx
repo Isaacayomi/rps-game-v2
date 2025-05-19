@@ -5,13 +5,17 @@ import paperIcon from "../assets/icon-paper.svg";
 import scissorsIcon from "../assets/icon-scissors.svg";
 import lizardIcon from "../assets/icon-lizard.svg";
 import spockIcon from "../assets/icon-spock.svg";
-function AdvancedMove({ dispatch, onSetShowResult }) {
+function AdvancedMove({ dispatch, onSetShowResult, toggleMode }) {
   return (
     <div className="  h-full bg-pentagon-gradient bg-no-repeat bg-center bg-[length:20rem_20rem] mt-[-2rem] lg:bg-[length:33rem_32rem]   ">
       <div className="mt-[6rem] flex flex-col items-center">
         <MovesButton
           onClick={() => {
-            dispatch({ type: "scissorsMove", payload: "scissors" });
+            dispatch({
+              type: "scissorsMove",
+              payload: "scissors",
+              mode: toggleMode,
+            });
             onSetShowResult((showResult) => !showResult);
           }}
         >
@@ -24,7 +28,11 @@ function AdvancedMove({ dispatch, onSetShowResult }) {
         <div className="flex items-center justify-center gap-[7.44rem] mb-[1.63rem] lg:gap-[11.38rem]">
           <MovesButton
             onClick={() => {
-              dispatch({ type: "spockMove", payload: "spock" });
+              dispatch({
+                type: "spockMove",
+                payload: "spock",
+                mode: toggleMode,
+              });
               onSetShowResult((showResult) => !showResult);
             }}
           >
@@ -37,7 +45,11 @@ function AdvancedMove({ dispatch, onSetShowResult }) {
 
           <MovesButton
             onClick={() => {
-              dispatch({ type: "paperMove", payload: "paper" });
+              dispatch({
+                type: "paperMove",
+                payload: "paper",
+                mode: toggleMode,
+              });
               onSetShowResult((showResult) => !showResult);
             }}
           >
@@ -52,7 +64,11 @@ function AdvancedMove({ dispatch, onSetShowResult }) {
         <div className="flex items-center justify-center gap-[2.06rem] lg:gap-[3.25rem]">
           <MovesButton
             onClick={() => {
-              dispatch({ type: "lizardMove", payload: "lizard" });
+              dispatch({
+                type: "lizardMove",
+                payload: "lizard",
+                mode: toggleMode,
+              });
               onSetShowResult((showResult) => !showResult);
             }}
           >
@@ -65,7 +81,7 @@ function AdvancedMove({ dispatch, onSetShowResult }) {
 
           <MovesButton
             onClick={() => {
-              dispatch({ type: "rockMove", payload: "rock" });
+              dispatch({ type: "rockMove", payload: "rock", mode: toggleMode });
               onSetShowResult((showResult) => !showResult);
             }}
           >

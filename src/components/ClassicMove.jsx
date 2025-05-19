@@ -3,14 +3,18 @@ import scissorsIcon from "../assets/icon-scissors.svg";
 import paperIcon from "../assets/icon-paper.svg";
 import rockIcon from "../assets/icon-rock.svg";
 
-function ClassicMove({ dispatch, onSetShowResult }) {
+function ClassicMove({ dispatch, onSetShowResult, toggleMode }) {
   return (
     <div className="mt-[3.56rem]">
       <div className=" flex flex-col items-center h-full bg-triangle-gradient bg-no-repeat bg-center bg-[length:14rem_10rem] mt-[-2rem] lg:bg-[length:16rem_13rem] ">
         <div className="flex  gap-[3.23rem] mt-[3rem]">
           <MovesButton
             onClick={() => {
-              dispatch({ type: "paperMove", payload: "paper" });
+              dispatch({
+                type: "paperMove",
+                payload: "paper",
+                mode: toggleMode,
+              });
               onSetShowResult((showResult) => !showResult);
             }}
           >
@@ -23,7 +27,11 @@ function ClassicMove({ dispatch, onSetShowResult }) {
 
           <MovesButton
             onClick={() => {
-              dispatch({ type: "scissorsMove", payload: "scissors" });
+              dispatch({
+                type: "scissorsMove",
+                payload: "scissors",
+                mode: toggleMode,
+              });
               onSetShowResult((showResult) => !showResult);
             }}
           >
@@ -37,7 +45,7 @@ function ClassicMove({ dispatch, onSetShowResult }) {
 
         <MovesButton
           onClick={() => {
-            dispatch({ type: "rockMove", payload: "rock" });
+            dispatch({ type: "rockMove", payload: "rock", mode: toggleMode });
             onSetShowResult((showResult) => !showResult);
           }}
         >
