@@ -4,7 +4,7 @@ function Header({ playerScore, cpuScore }) {
   return (
     // flex justify-center items-center gap-[7.06rem]
     <div className=" border border-headerOutline rounded-[0.3125rem] max-w-[19.4375rem] w-full mx-auto lg:max-w-[43.75rem] lg:w-full lg:h-[9.375rem] lg:gap-[21.08rem] lg:border-[3px] lg:rounded-[0.9375rem] ">
-      <div className="lg:flex lg:justify-center lg:items-center lg:gap-[7.06rem]">
+      <div className="flex justify-between items-center ">
         <h1>
           <img
             className="max-w-[5.1875rem] w-full lg:max-w-[9.7175rem] lg:w-full "
@@ -13,7 +13,7 @@ function Header({ playerScore, cpuScore }) {
           />
         </h1>
 
-        <div className="flex items-end justify-normal gap-5">
+        <div className="flex items-center justify-normal gap-2">
           <ScoreButton>
             <span className="text-scoreText text-[0.625rem] leading-normal tracking-[0.09769rem] font-semibold pt-[0.63rem] lg:text-[1.5rem] lg:text-center  ">
               PLAYER
