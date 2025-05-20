@@ -9,6 +9,7 @@ const initialState = {
   computerMove: null,
   showRules: false,
   playerScore: 0,
+  cpuScore: 0,
 };
 
 function generateComputerMove(mode) {
@@ -86,7 +87,12 @@ function reducer(state, action) {
         ...state,
         playerMove: null,
         computerMove: null,
-        playerScore: action.payload ? state.playerScore + 1 : state.playerScore,
+        playerScore:
+          action.payload === "YOU WIN"
+            ? state.playerScore + 1
+            : state.playerScore,
+        cpuScore:
+          action.payload === "YOU LOSE" ? state.cpuScore + 1 : state.cpuScore,
       };
 
     case "advancedGame":
@@ -95,6 +101,7 @@ function reducer(state, action) {
         playerMove: null,
         computerMove: null,
         playerScore: 0,
+        cpuScore: 0,
       };
 
     default:
@@ -106,12 +113,15 @@ function App() {
   const [result, setResult] = useState("");
   const [toggleMode, setToggleMode] = useState("ADVANCED");
 
-  const [{ showRules, playerScore, playerMove, computerMove }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { showRules, playerScore, cpuScore, playerMove, computerMove },
+    dispatch,
+  ] = useReducer(reducer, initialState);
   return (
     <div>
       <StartScreen
         playerScore={playerScore}
+        cpuScore={cpuScore}
         dispatch={dispatch}
         playerMove={playerMove}
         computerMove={computerMove}

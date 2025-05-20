@@ -9,6 +9,7 @@ import AdvancedGame from "./AdvancedGame";
 function StartScreen({
   dispatch,
   playerScore,
+  cpuScore,
   playerMove,
   computerMove,
   result,
@@ -20,7 +21,7 @@ function StartScreen({
 
   return (
     <div className="bg-home-bg min-h-screen pt-2 pb-3 ">
-      <Header playerScore={playerScore} />
+      <Header playerScore={playerScore} cpuScore={cpuScore} />
       {playerMove && !showResult ? (
         <ResultScreen
           playerMove={playerMove}

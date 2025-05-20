@@ -128,7 +128,13 @@ function ResultScreen({
             onClick={() => {
               onSetShowResult((prev) => !prev);
               onSetResult("");
-              dispatch({ type: "reset", payload: result === "YOU WIN" });
+              dispatch({
+                type: "reset",
+                payload:
+                  (result === "YOU WIN" && "YOU WIN") ||
+                  (result === "YOU LOSE" && "YOU LOSE"),
+              });
+              // dispatch({ type: "reset", payload: result === "YOU LOSE" });
             }}
             className={`cursor-pointer font-barlow bg-white text-darkText rounded-lg font-semibold text-base py-[0.94rem] px-[3.75rem] leading-[0.15625rem] mt-4 lg:h-[3rem] lg:tracking-[0.15625rem] lg:font-semibold lg:leading-[0.15625rem] text-[1rem] ${
               result === "YOU LOSE" && "text-red-500"
