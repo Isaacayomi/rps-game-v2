@@ -3,7 +3,7 @@ import ScoreButton from "./ScoreButton";
 function Header({ playerScore, cpuScore }) {
   return (
     // flex justify-center items-center gap-[7.06rem]
-    <div className=" border border-headerOutline rounded-[0.3125rem] max-w-[19.4375rem] w-full mx-auto lg:max-w-[43.75rem] lg:w-full lg:h-[9.375rem] lg:gap-[21.08rem] lg:border-[3px] lg:rounded-[0.9375rem] ">
+    <div className=" px-5 border border-headerOutline rounded-[0.3125rem] max-w-[19.4375rem] w-full mx-auto lg:max-w-[43.75rem] lg:w-full lg:h-[9.375rem] lg:gap-[21.08rem] lg:border-[3px] lg:rounded-[0.9375rem] ">
       <div className="flex justify-between items-center ">
         <h1>
           <img
